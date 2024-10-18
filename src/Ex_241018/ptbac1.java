@@ -1,6 +1,7 @@
+package Ex_241018;
 import java.util.Scanner;
 
-public class ex1_ptbac1 {
+public class ptbac1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
