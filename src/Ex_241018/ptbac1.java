@@ -23,7 +23,7 @@ public class ptbac1 {
             double x = -b / a;
             System.out.println("Nghiem cua phuong trinh la: x = " + x);
         }
-
+        
         scanner.close();
     }
 }
