@@ -13,11 +13,11 @@ public class hw3_two_sum {
         //Nhap du lieu
         System.out.println("Nhap so phan tu cua mang: ");
         int n = s.nextInt();
-        int[] a = new int[n];
         
+        int[] a = new int[n];
         System.out.print("Nhap gia tri " + n + " phan tu cua mang: ");
-        for (int i=1; i<=n; i++) {
-            a[i-1] = s.nextInt();
+        for (int i=0; i<n; i++) {
+            a[i] = s.nextInt();
         }
         
         System.out.print("Nhap target: ");
