@@ -41,5 +41,7 @@ public class hw1_Chuan_Hoa_Ten {
         System.out.println("Nhap ho ten: ");
         hoTen = s.nextLine();
         System.out.println("Ho ten sau khi chuan hoa: '" + chuanHoaHoTen(hoTen) + "'");
+        
+        s.close();
     }
 }
