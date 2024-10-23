@@ -21,7 +21,7 @@ public class hw7_may_Ban_Nuoc {
         "Heneiken"
     };
     
-    private static final double[] price = {
+    private static final int[] price = {
         16000, //Cafe den
         18000, //Cafe sua
         12000, //Coca
@@ -31,7 +31,7 @@ public class hw7_may_Ban_Nuoc {
         20000  //Heneiken
     };
     
-    private static double account = 0; //Tong tien trong tai khoan
+    private static int account = 0; //Tong tien trong tai khoan
     
     private static void showProducts() {
         System.out.println("-----\nDanh sach san pham:");
@@ -46,6 +46,7 @@ public class hw7_may_Ban_Nuoc {
         
         do {
             System.out.println("-----\nMay Ban Nuoc Tu Dong");
+            System.out.println("So du tai khoan: " + account);
             System.out.println("1. Nap tien vao may");
             System.out.println("2. Mua nuoc");
             System.out.println("3. Rut tien");
@@ -70,11 +71,11 @@ public class hw7_may_Ban_Nuoc {
     
     private static void deposit(Scanner s) {
         System.out.print("Nhap so tien muon nap: ");
-        double amount = s.nextDouble();
+        int amount = s.nextInt();
         if (amount > 0) {
             account += amount;
             System.out.println("Ban da nap " + amount + " vao tai khoan.");
-            System.out.println("Tong so tien: " + account);
+            System.out.println("So du tai khoan: " + account);
         } else {
             System.out.println("So tien khong hop le");
         }
@@ -85,7 +86,7 @@ public class hw7_may_Ban_Nuoc {
             System.out.println("Ban chua nap tien, vui long nap tien vao tai khoan.");
             return;
         } else {
-            System.out.println("Ban co " + account + "trong tai khoan");
+            System.out.println("-----\nSo du tai khoan: " + account);
             showProducts();
             System.out.print("Ban muon mua gi?\nNhap ky tu tuong ung [A-G]: ");
             char pickProduct = s.next().toUpperCase().charAt(0);
@@ -96,7 +97,7 @@ public class hw7_may_Ban_Nuoc {
                 return;
             }
             
-            double priceIndex = price[index];
+            int priceIndex = price[index];
             
             if (account >= priceIndex) {
                 account -= priceIndex;
