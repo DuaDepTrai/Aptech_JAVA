@@ -13,7 +13,7 @@ interface Animal2 {
     void makeEat();
 }
 
-class Dog implements Animal2 {
+class Dog2 implements Animal2 {
     @Override
     public void makeSound() {
         System.out.println("Go go go");
@@ -39,7 +39,7 @@ class Cat implements Animal2 {
 
 public class Main_Interface {
     public static void main(String[] args) {
-        Animal2 dog = new Dog();
+        Animal2 dog = new Dog2();
         dog.makeSound();
         dog.makeEat();
         
