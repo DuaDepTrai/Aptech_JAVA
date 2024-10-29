@@ -8,21 +8,17 @@ import java.util.Date;
 
 public class Account {
     private String customerName;
-    private int accountNumber;
+    private int accountNumber; // Thay đổi từ String sang int
     private double accountBalance;
     private Date createdDate;
 
-    // Constructor
-    public Account(String customerName, int accountNumber, double accountBalance) {
+    public Account(String customerName, int accountNumber, double accountBalance, Date createdDate) {
         this.customerName = customerName;
-        this.accountNumber = accountNumber;
+        this.accountNumber = accountNumber; // Khởi tạo accountNumber
         this.accountBalance = accountBalance;
-        this.createdDate = new Date(); // Ngày tạo tài khoản là ngày hiện tại
+        this.createdDate = createdDate;
     }
 
-    Account(String customerName, int i, double initialBalance, String createdDate) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     // Getter và Setter
     public String getCustomerName() {
@@ -36,11 +32,6 @@ public class Account {
     public double getAccountBalance() {
         return accountBalance;
     }
-    
-    public void setAccountBalance(double accountBalance) {
-        this.accountBalance = accountBalance;
-    }
-
 
     public Date getCreatedDate() {
         return createdDate;
