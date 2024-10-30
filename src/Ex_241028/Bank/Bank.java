@@ -29,22 +29,21 @@ public class Bank {
         double openingBalance = scanner.nextDouble();
 
         try {
-            assert openingBalance >= 0 : "Số dư mở không được âm";
             if (openingBalance < 100) {
-                throw new IllegalArgumentException("Minimum opening balance is $100.");
+                throw new Exception("Minimum opening balance is $100.");
             }
             
             Date createdDate = new Date(); // Khởi tạo ngày hiện tại
 
             if (nextAccount >= maximumAccounts) {
-                throw new IllegalStateException("Maximum accounts limit reached.");
+                throw new Exception("Maximum accounts limit reached.");
             }
             
             Account newAccount = new Account(customerName, nextAccountNumber++, openingBalance, createdDate);
             account[nextAccount++] = newAccount;
             System.out.println("-----\nAccount created successfully.");
             displayAccountDetails(newAccount);
-    } catch (AssertionError | IllegalArgumentException | IllegalStateException e) {
+    } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
     }
@@ -57,26 +56,30 @@ public class Bank {
         double amount = scanner.nextDouble();
 
         try {
-            assert amount > 0 : "Amount must be positive.";
-            assert nextAccount > 0 : "No accounts available.";
-
+            if (amount <= 0) {
+                throw new Exception("Amount must be positive");
+            }
+            if (nextAccount <= 0) {
+                throw new Exception("No account avaiable");
+            }
+            
             Account account = findAccount(accountNumber);
             if (account == null) {
-                throw new IllegalArgumentException("Account does not exist.");
+                throw new Exception("Account does not exist.");
             }
 
             if (amount > account.getAccountBalance()) {
-                throw new InsufficientFundsException(account.getAccountBalance());
+                throw new Exception("Account balance is not enough");
             }
             if (amount < 100) {
-                throw new IllegalArgumentException("You must withdraw at least $100.");
+                throw new Exception("You must withdraw at least $100.");
             }
 
             account.updateBalance(-amount);
             System.out.println("-----\nWithdrawal " + amount + " successful.\n-----");
             displayAccountDetails(account);
         } catch (Exception e) {
-            e.printStackTrace(); // Xử lý ngoại lệ
+            System.out.println("Error: " + e.getMessage());
         }
     }
 
@@ -88,16 +91,18 @@ public class Bank {
         double amount = scanner.nextDouble();
 
         try {
-            assert amount > 0 : "Amount must be positive.";
+            if (amount <= 0) {
+                throw new Exception("Amount must be positive");
+            }
             Account account = findAccount(accountNumber);
             if (account == null) {
-                throw new IllegalArgumentException("Account does not exist.");
+                throw new Exception("Account does not exist.");
             }
 
             account.updateBalance(amount);
             System.out.println("-----\nDeposit " + amount + " successful.\n-----");
             displayAccountDetails(account);
-            } catch (AssertionError | IllegalArgumentException e) {
+            } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
     }

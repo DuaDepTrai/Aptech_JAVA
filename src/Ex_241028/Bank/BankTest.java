@@ -9,7 +9,7 @@ public class BankTest {
         int choice;
 
         do {
-            System.out.println("Menu:");
+            System.out.println("-----\nMenu:");
             System.out.println("1. Create New Account");
             System.out.println("2. Withdraw Money");
             System.out.println("3. Deposit Money");
