@@ -10,7 +10,7 @@ package De2;
  */
 public interface LibraryItem {
     String getTitle();
-    boolean isAvaiable();
+    boolean isAvailable();
     void borrowItem();
     void returnItem();
 }
