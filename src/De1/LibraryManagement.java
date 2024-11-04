@@ -24,6 +24,7 @@ public class LibraryManagement {
             System.out.println("4. Return book");
             System.out.println("5. Display list of book");
             System.out.println("6. Exit");
+            System.out.print("Choose an option: ");
             pick = scanner.nextInt();
             scanner.nextLine();
             
@@ -43,7 +44,7 @@ public class LibraryManagement {
                 LibraryMember member = library.findMemberByName(borrowerName);
                 
                 if (member != null) {
-                    System.out.println("Enter name of book: ");
+                    System.out.print("Enter name of book: ");
                     String bookTitle = scanner.nextLine();
                     Book book = library.findBookByTitle(bookTitle);
                     

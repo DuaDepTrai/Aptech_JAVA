@@ -60,7 +60,7 @@ public class Library {
         System.out.println("List book:");
         for (Book book : books) {
             System.out.println("- " + book.getTitle() + " ("
-                    + (book.isAvailable() ? "Avaiable" : "Not avaiable") + ")");
+                    + (book.isAvaiable() ? "Avaiable" : "Not avaiable") + ")");
         }
     }
 }
