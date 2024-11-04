@@ -26,6 +26,7 @@ public class BankTest {
                 bank.deposit();
             } else if (choice == 4) {
                 System.out.println("Exiting the application.");
+                break;
             } else {
                 System.out.println("Error: Invalid choice. Please try again.");
             }
