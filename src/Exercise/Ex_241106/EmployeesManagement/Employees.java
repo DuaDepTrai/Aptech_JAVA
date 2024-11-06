@@ -14,7 +14,7 @@ public class Employees extends Person implements Employee {
     private int employeeId;
     private double baseSalary;
     private double salaryCoefficient;
-    private double salary;
+    private double salary = 0;
 
     public Employees(String name, int age, String address, int employeeId, double baseSalary, double salaryCoefficient, double salary) {
         super(name, age, address);
@@ -27,7 +27,6 @@ public class Employees extends Person implements Employee {
     @Override
     public double calculateSalary(double baseSalary, double salaryCoefficient) {
         Scanner scanner = new Scanner (System.in);
-        double salary;
         
         System.out.println("Enter number of working days: ");
         int workingDay = scanner.nextInt();
@@ -36,8 +35,16 @@ public class Employees extends Person implements Employee {
         System.out.println("Enter reward: ");
         double reward = scanner.nextDouble();
         
-        return salary = baseSalary*salaryCoefficient/26*workingDay
+        return baseSalary*salaryCoefficient/26*workingDay
                         - 50000*dayLate + reward;
+    }
+    
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+    
+    public int getEmployeeId() {
+        return employeeId;
     }
     
     public double getBaseSalary() {

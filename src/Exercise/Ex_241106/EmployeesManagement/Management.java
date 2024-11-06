@@ -22,22 +22,11 @@ public class Management {
         employeesList.add(employee);
     }
     
-    public void removeEmployee(String employeeId) {
-        if (findEmployeeById(employeeId)) {
+    public void removeEmployee(int employee) {
             employeesList.remove(employee);
-        }
     }
-    
-    public void displayAllEmployees() {
-        System.out.println("List employees: ");
-        for (Employees employee : employeesList) {
-            System.out.println(employee.getName() + " - " + employee.getAge() + " - "
-                               + employee.getAddress() + " - " + employee.getSalary());
-        }
-    }
-    
+        
     public double calculateTotalSalary() {
-        System.out.print("Total salary: ");
         double totalSalary = 0;
         for (Employees employee : employeesList) {
             totalSalary += employee.getSalary();
@@ -60,6 +49,15 @@ public class Management {
         System.out.println("Address: " + employees.getAddress());
         System.out.println("Base salary: " + employees.getBaseSalary());
         System.out.println("Salary coefficient: " + employees.getSalaryCoefficient());
+        System.out.println("Salary: " + employees.getSalary());
         System.out.println("=====");
+    }
+    
+    public void displayAllEmployees() {
+        System.out.println("List employees: ");
+        for (Employees employee : employeesList) {
+            System.out.println(employee.getName() + " - " + employee.getAge() + " - "
+                               + employee.getAddress() + " - " + employee.getSalary());
+        }
     }
 }
