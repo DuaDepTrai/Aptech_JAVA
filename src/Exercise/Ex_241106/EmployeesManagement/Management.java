@@ -49,7 +49,7 @@ public class Management {
         System.out.println("Address: " + employees.getAddress());
         System.out.println("Base salary: " + employees.getBaseSalary());
         System.out.println("Salary coefficient: " + employees.getSalaryCoefficient());
-        System.out.println("Salary: " + employees.getSalary());
+        System.out.println("Salary: " + (int) employees.getSalary());
     }
     
     public void displayAllEmployees() {

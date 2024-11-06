@@ -28,11 +28,11 @@ public class Employees extends Person implements Employee {
     public double calculateSalary(double baseSalary, double salaryCoefficient) {
         Scanner scanner = new Scanner (System.in);
         
-        System.out.println("Enter number of working days: ");
+        System.out.print("Enter number of working days: ");
         int workingDay = scanner.nextInt();
-        System.out.println("Enter number of days late: ");
+        System.out.print("Enter number of days late: ");
         int dayLate = scanner.nextInt();
-        System.out.println("Enter reward: ");
+        System.out.print("Enter reward: ");
         double reward = scanner.nextDouble();
         
         return baseSalary*salaryCoefficient/26*workingDay

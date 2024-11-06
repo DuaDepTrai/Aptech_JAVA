@@ -33,6 +33,7 @@ public class EmployeesManagement {
                 case 1:
                     System.out.print("Enter employee ID: ");
                     int employeeId = scanner.nextInt();
+                    scanner.nextLine();
                     if (employee.findEmployeeById(employeeId) == null) {
                         System.out.print("Enter name: ");
                         String name = scanner.nextLine();
@@ -57,7 +58,7 @@ public class EmployeesManagement {
                     break;
 
                 case 2:
-                     System.out.print("Enter employee ID to remove: ");
+                    System.out.print("Enter employee ID to remove: ");
                     int removeId = scanner.nextInt();
                     Employees employeeToRemove = employee.findEmployeeById(removeId);
                     if (employeeToRemove != null) {
@@ -84,9 +85,11 @@ public class EmployeesManagement {
                     int calcId = scanner.nextInt();
                     Employees employeeToCalculate = employee.findEmployeeById(calcId);
                     if (employeeToCalculate != null) {
+                        System.out.println("Employee: " + employee.findEmployeeById(calcId));
                         double salary = employeeToCalculate.calculateSalary(employeeToCalculate.getBaseSalary(), employeeToCalculate.getSalaryCoefficient());
                         employeeToCalculate.setSalary(salary);
                         System.out.printf("Salary calculated and updated: " + (int) salary);
+                        System.out.println();
                     } else {
                         System.out.println("Employee not found.");
                     }
