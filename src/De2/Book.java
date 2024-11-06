@@ -8,26 +8,36 @@ package De2;
  *
  * @author Admin
  */
-class Book implements LibraryItem {
-
+public class Book implements LibraryItem {
+    private String title;
+    private String author;
+    private boolean available;
+    
+    public Book(String title, String author) {
+        this.title = title;
+        this.author = author;
+        this.available = true;
+    }
+    
     @Override
     public String getTitle() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return title;
     }
-
+    
     @Override
-    public boolean isAvaiable() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public boolean isAvailable() {
+        return available;
     }
 
     @Override
     public void borrowItem() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (available) {
+            available = false;
+        } else System.out.println("This book is not available");
     }
 
     @Override
     public void returnItem() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        available = true;
     }
-    
 }
