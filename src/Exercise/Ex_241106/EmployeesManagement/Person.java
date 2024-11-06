@@ -2,14 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Exercise.Ex_241025;
+package Exercise.Ex_241106.EmployeesManagement;
 
 /**
  *
  * @author Admin
  */
-public interface TKTK {
-    void guiTien(double soTien);
-    void rutTien(double soTien);
-    double xemSoDu();
+public class Person {
+    
 }
