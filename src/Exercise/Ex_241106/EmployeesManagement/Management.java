@@ -50,14 +50,13 @@ public class Management {
         System.out.println("Base salary: " + employees.getBaseSalary());
         System.out.println("Salary coefficient: " + employees.getSalaryCoefficient());
         System.out.println("Salary: " + employees.getSalary());
-        System.out.println("=====");
     }
     
     public void displayAllEmployees() {
         System.out.println("List employees: ");
         for (Employees employee : employeesList) {
             System.out.println(employee.getName() + " - " + employee.getAge() + " - "
-                               + employee.getAddress() + " - " + employee.getSalary());
+                               + employee.getAddress() + " - " + (int) employee.getSalary());
         }
     }
 }
