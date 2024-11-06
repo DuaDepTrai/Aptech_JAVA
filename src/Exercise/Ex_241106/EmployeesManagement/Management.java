@@ -22,7 +22,7 @@ public class Management {
         employeesList.add(employee);
     }
     
-    public void removeEmployee(int employee) {
+    public void removeEmployee(Employees employee) {
             employeesList.remove(employee);
     }
         

@@ -56,15 +56,15 @@ public class EmployeesManagement {
                     break;
                     
                 case 2:
-                    System.out.print("Enter employee ID: ");
+                     System.out.print("Enter employee ID to remove: ");
                     int removeId = scanner.nextInt();
                     Employees employeeToRemove = employee.findEmployeeById(removeId);
                     if (employeeToRemove != null) {
                         employee.removeEmployee(employeeToRemove);
                         System.out.println("Employee removed successfully!");
                     } else {
-                        System.out.println("Employee ID is existing, please use an other ID.");
-                    }            
+                        System.out.println("Employee not found.");
+                    }
                     break;
                 default:
                     throw new AssertionError();
