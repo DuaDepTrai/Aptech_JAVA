@@ -39,6 +39,18 @@ public class Student {
         return classRoom;
     }
     
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public void setAge(int age) {
+        this.age = age;
+    }
+    
+    public void setClassRoom(String classRoom) {
+        this.classRoom = classRoom;
+    }
+    
     @Override
     public String toString() {
         return "ID: " + id + " - Name: " + name + " - Age: " + age + " - Class: " + classRoom;

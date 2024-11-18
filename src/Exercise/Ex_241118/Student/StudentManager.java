@@ -76,6 +76,39 @@ public class StudentManager {
         }
     }
     
+    public void updateStudentById() {
+        System.out.print("Enter Student ID: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+        
+        Student student = findStudentById(id);
+        if (student != null) {
+            System.out.println("Student found: ");
+            System.out.println(student);
+            
+            System.out.println("Enter new name (leave blank to keep current name):");
+            String newName = scanner.nextLine();
+            System.out.println("Enter new age (enter 0 to keep current name): ");
+            int newAge = scanner.nextInt();
+            scanner.nextLine();
+            System.out.println("Enter new classroom (leave blank to keep current class): ");
+            String newClassRoom = scanner.nextLine();
+            
+            if (!newName.isEmpty()) {
+                student.setName(newName);
+            }
+            if (newAge != 0) {
+                student.setAge(newAge);
+            }
+            if (!newClassRoom.isEmpty()) {
+                student.setClassRoom(newClassRoom);
+            }
+            System.out.println("Student information was updated successfully");
+        } else {
+            System.out.println("Cannot find any student with ID: " + id);
+        }
+    }
+    
     public Student findStudentById(int id) {
         for (Student student : students) {
             if (student.getId() == id) {
