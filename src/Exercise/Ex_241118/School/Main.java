@@ -4,6 +4,8 @@
  */
 package Exercise.Ex_241118.School;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Admin
